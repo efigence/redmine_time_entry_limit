@@ -1,0 +1,9 @@
+en:
+  activerecord:
+    errors:
+      models:
+        time_entry:
+          attributes:
+            hours:
+              too_long: "You can report maximum 20h per day"
+              too_long_limit: "You can report maximum 20h per day. Already reported %{limit} in %{day}"

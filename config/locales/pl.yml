@@ -1,0 +1,9 @@
+pl:
+  activerecord:
+    errors:
+      models:
+        time_entry:
+          attributes:
+            hours:
+              too_long: "Możesz zaraportować maksymalnie 20 godzin w jednym dniu"
+              too_long_limit: "Możesz zaraportować maksymalnie 20 godzin w jednym dniu. Już zaraportowano %{limit} w %{day}"
