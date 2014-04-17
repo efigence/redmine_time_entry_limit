@@ -7,3 +7,5 @@ pl:
             hours:
               too_long: "Możesz zaraportować maksymalnie 20 godzin w jednym dniu"
               too_long_limit: "Możesz zaraportować maksymalnie 20 godzin w jednym dniu. Już zaraportowano %{limit} w %{day}"
+            spent_on:
+              too_many_days: "Możesz zaraportować maksymalnie %{limit} dni wstecz"

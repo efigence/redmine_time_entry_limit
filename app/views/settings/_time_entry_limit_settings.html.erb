@@ -1,4 +1,6 @@
 <p>
   <label for="settings_limit">Time Entry day limit</label>
-  <%= text_field_tag 'settings[limit]', @settings['limit'] %></p>
-
+  <%= text_field_tag 'settings[limit]', @settings['limit'] %><br />
+  <label for="settings_day_limit">Permitted days back to report time</label>
+  <%= text_field_tag 'settings[day_limit]', @settings['day_limit'] %>
+</p>

@@ -7,3 +7,5 @@ en:
             hours:
               too_long: "You can report maximum 20h per day"
               too_long_limit: "You can report maximum 20h per day. Already reported %{limit} in %{day}"
+            spent_on:
+              too_many_days: "You can report maximum %{limit} days back"

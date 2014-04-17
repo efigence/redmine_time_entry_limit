@@ -28,6 +28,7 @@ unless Redmine::Plugin.registered_plugins.keys.include?(:redmine_timesheet_plugi
 
     settings(:default => {
                'limit' => '20',
+               'day_limit' => '7'
              }, :partial => 'settings/time_entry_limit_settings')
 
   end

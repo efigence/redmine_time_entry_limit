@@ -7,6 +7,7 @@ module RedmineTimesheetPlugin
         base.send(:include, InstanceMethods)
         base.class_eval do
           validate :validate_time_limit
+          validate :validate_day_back_limit
         end
       end
 
@@ -23,6 +24,12 @@ module RedmineTimesheetPlugin
             elsif hours > limit
               errors.add :hours, :too_long
             end
+          end
+        end
+        def validate_day_back_limit
+          if spent_on
+            limit = Setting.plugin_redmine_time_entry_limit['day_limit'].to_i || 7
+            errors.add :spent_on, :too_many_days, limit: limit if spent_on < Date.today - limit.days
           end
         end
       end
