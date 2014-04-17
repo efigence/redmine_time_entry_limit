@@ -21,10 +21,10 @@ A copy can be downloaded from [GitHub]( https://github.com/efigence/redmine_time
 
 ## Configuration
 
-Visit Administration -> Plugins. Afterwards, click on `Configure` link next to the plugin name. Default limit is set to 20h.
+Visit Administration -> Plugins. Afterwards, click on `Configure` link next to the plugin name.
+
+Default hours limit is set to 20h and default number of days back for which you can report time is 7.
 
 ## License
 
 Redmine Time Entry limit plugin is an Open Source project covered by the GNU General Public License version 2. See LICENSE file.
-
-
