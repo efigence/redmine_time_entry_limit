@@ -1,0 +1,8 @@
+<% if User.current.admin? %>
+<%= javascript_tag do %>
+$(function(){
+  var userInput = "<p><label for='time_entry_user_id'>User ID</label><input id='time_entry_user_id' name='time_entry[user_id]' size='6' type='text' /></p>"
+  $('.tabular').prepend(userInput);
+});
+<% end %>
+<% end %>
