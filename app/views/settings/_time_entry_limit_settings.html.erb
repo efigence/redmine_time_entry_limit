@@ -4,3 +4,19 @@
   <label for="settings_day_limit">Permitted days back to report time</label>
   <%= text_field_tag 'settings[day_limit]', @settings['day_limit'] %>
 </p>
+<h4>Groups allowed to create time entries for other users</h4>
+<%= select_tag "settings[groups][]", options_from_collection_for_select(Group.all, 'id', 'lastname', @settings['groups']), :multiple => true, :id => "groups" %>
+
+
+<% content_for :header_tags do %>
+  <%= javascript_include_tag 'selectize.min.js',   :plugin => 'redmine_time_entry_limit' %>
+  <%= stylesheet_link_tag 'selectize.default.css', :plugin => 'redmine_time_entry_limit' %>
+<% end %>
+
+<%= javascript_tag do %>
+$(function(){
+  $('#groups').selectize({
+    plugins: ['remove_button']
+  });
+});
+<% end %>
