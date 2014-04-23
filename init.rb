@@ -15,7 +15,7 @@ object_to_prepare.to_prepare do
   TimeEntry.send(:include, RedmineTimesheetPlugin::Patches::TimeEntryPatch)
 end
 
-unless Redmine::Plugin.registered_plugins.keys.include?(:redmine_timesheet_plugin)
+unless Redmine::Plugin.registered_plugins.keys.include?(:redmine_time_entry_limit)
   Redmine::Plugin.register :redmine_time_entry_limit do
     name 'Redmine Time Entry Limit'
     author 'Rafal Lisowski, Jacek Grzybowski'
