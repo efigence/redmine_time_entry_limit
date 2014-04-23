@@ -18,12 +18,12 @@ end
 unless Redmine::Plugin.registered_plugins.keys.include?(:redmine_timesheet_plugin)
   Redmine::Plugin.register :redmine_time_entry_limit do
     name 'Redmine Time Entry Limit'
-    author 'Rafał Lisowski'
+    author 'Rafal Lisowski, Jacek Grzybowski'
     description 'This is a Time Entry extension plugin for hours validations'
     url 'https://github.com/efigence/redmine_time_entry_limit'
     author_url 'http://www.efigence.com/'
 
-    version '0.0.1'
+    version '0.0.2'
     requires_redmine :version_or_higher => '0.9.0'
 
     settings(:default => {
