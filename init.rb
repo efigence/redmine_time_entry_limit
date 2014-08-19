@@ -13,6 +13,8 @@ end
 object_to_prepare.to_prepare do
   require_dependency 'time_entry'
   TimeEntry.send(:include, RedmineTimesheetPlugin::Patches::TimeEntryPatch)
+  require_dependency 'project'
+  Project.send(:include, RedmineTimesheetPlugin::Patches::ProjectPatch)
 end
 
 unless Redmine::Plugin.registered_plugins.keys.include?(:redmine_time_entry_limit)
@@ -35,3 +37,4 @@ end
 
 require 'redmine_timesheet_plugin/hooks/time_entry_controller_hook'
 require 'redmine_timesheet_plugin/hooks/time_entry_view_hook'
+require 'redmine_timesheet_plugin/hooks/project_settings_view_hook'

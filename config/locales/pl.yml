@@ -1,4 +1,5 @@
 pl:
+  field_enforce_issue: Wymagaj numeru taska podczas raportowania czasu pracy
   activerecord:
     errors:
       models:

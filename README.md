@@ -17,13 +17,18 @@ A copy can be downloaded from [GitHub]( https://github.com/efigence/redmine_time
 ## Installation and Setup
 
 1. In your redmine root directory, run the command: `git clone https://github.com/efigence/redmine_time_entry_limit plugins/redmine_time_entry_limit`
-2. Restart web server
+2. bundle exec rake redmine:plugins:migrate RAILS_ENV=production
+3. Restart web server
 
 ## Configuration
 
 Visit Administration -> Plugins. Afterwards, click on `Configure` link next to the plugin name.
 
 Default hours limit is set to 20h and default number of days back for which you can report time is 7.
+
+## Configuration per project
+
+In project setting you can force users to provide issue_id in time entries. Default to false.
 
 # License
 

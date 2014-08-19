@@ -1,4 +1,5 @@
 en:
+  field_enforce_issue: Enforce issue id in time entry
   activerecord:
     errors:
       models:
