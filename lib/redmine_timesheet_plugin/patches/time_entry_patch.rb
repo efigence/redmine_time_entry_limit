@@ -38,9 +38,12 @@ module RedmineTimesheetPlugin
         def validate_day_back_limit
           if !User.current.admin? && spent_on
             limit = Setting.plugin_redmine_time_entry_limit['day_limit'].to_i || 7
-            errors.add :spent_on, :too_many_days, limit: limit if spent_on < Date.today - limit.days
-            return false
+            if spent_on < Date.today - limit.days
+              errors.add :spent_on, :too_many_days, limit: limit 
+              return false
+            end
           end
+          return true
         end
       end
     end
