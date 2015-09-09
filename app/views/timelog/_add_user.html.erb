@@ -1,13 +1,21 @@
 <% if User.current.admin? || !((Setting.plugin_redmine_time_entry_limit['groups'] || []) & User.current.groups.select('id').collect{|el| el.id.to_s}).blank?   %>
-  <%= select_tag "time_entry[user_id]", options_from_collection_for_select(User.select([:id, :firstname, :lastname]).where('lastname != ?', 'Anonymous'), 'id', 'name', User.current.id), :id => "time_entry_user_id", style:"display:none;" %>
+  <%= select_tag "time_entry[user_id]", options_from_collection_for_select(User.select([:id, :firstname, :lastname]).where('lastname != ?', 'Anonymous'), 'id', 'name', (time_entry.user || User.current).id), :id => "time_entry_user_id", style:"display:none;" %>
   <%= javascript_tag do %>
-  $(function(){
-    var label = "<label for='time_entry_user_id'>User</label>";
-    var selectUser = $('#time_entry_user_id');
-    $('.tabular').prepend($('<p></p>'));
-    $('.tabular').children().first().prepend(selectUser);
-    $('.tabular').children().first().prepend(label);
-    selectUser.show();
-  });
+    $(function(){
+      var label = "<label for='time_entry_user_id'>User</label>";
+      var selectUser = $('#time_entry_user_id');
+      $('.tabular').prepend($('<p></p>'));
+      $('.tabular').children().first().prepend(selectUser);
+      $('.tabular').children().first().prepend(label);
+      selectUser.show();
+    });
   <% end %>
+  <style type="text/css">
+    .box.tabular{
+      overflow: visible;
+    }
+    .box.tabular p{
+      overflow: visible;
+    }
+  </style>
 <% end %>
