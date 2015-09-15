@@ -13,6 +13,8 @@ end
 object_to_prepare.to_prepare do
   require_dependency 'time_entry'
   TimeEntry.send(:include, RedmineTimesheetPlugin::Patches::TimeEntryPatch)
+  require_dependency 'timelog_controller'
+  TimelogController.send(:include, RedmineTimesheetPlugin::Patches::TimelogControllerPatch)
   require_dependency 'project'
   Project.send(:include, RedmineTimesheetPlugin::Patches::ProjectPatch)
 end
